@@ -1,0 +1,136 @@
+cmake_minimum_required(VERSION 3.25)
+project(STARTcraft)
+
+set(CMAKE_CXX_STANDARD 23)
+
+include_directories(external/bwapi/BWAPIClient)
+include_directories(external/bwapi/include)
+include_directories(external/bwapi/include/BWAPI)
+include_directories(external/bwapi/include/BWAPI/Client)
+include_directories(external/bwapi/shared)
+include_directories(src/starterbot)
+
+add_executable(bw
+        external/bwapi/BWAPIClient/BulletImpl.cpp
+        external/bwapi/BWAPIClient/Client.cpp
+        external/bwapi/BWAPIClient/Command.h
+        external/bwapi/BWAPIClient/Convenience.h
+        external/bwapi/BWAPIClient/ForceImpl.cpp
+        external/bwapi/BWAPIClient/GameImpl.cpp
+        external/bwapi/BWAPIClient/PlayerImpl.cpp
+        external/bwapi/BWAPIClient/RegionImpl.cpp
+        external/bwapi/BWAPIClient/UnitImpl.cpp
+        external/bwapi/BWAPILIB/AIModule.cpp
+        external/bwapi/BWAPILIB/BroodwarOutputDevice.cpp
+        external/bwapi/BWAPILIB/BulletType.cpp
+        external/bwapi/BWAPILIB/BWAPI.cpp
+        external/bwapi/BWAPILIB/Color.cpp
+        external/bwapi/BWAPILIB/DamageType.cpp
+        external/bwapi/BWAPILIB/Error.cpp
+        external/bwapi/BWAPILIB/Event.cpp
+        external/bwapi/BWAPILIB/ExplosionType.cpp
+        external/bwapi/BWAPILIB/Filters.cpp
+        external/bwapi/BWAPILIB/Forceset.cpp
+        external/bwapi/BWAPILIB/Game.cpp
+        external/bwapi/BWAPILIB/GameType.cpp
+        external/bwapi/BWAPILIB/Order.cpp
+        external/bwapi/BWAPILIB/Player.cpp
+        external/bwapi/BWAPILIB/Playerset.cpp
+        external/bwapi/BWAPILIB/PlayerType.cpp
+        external/bwapi/BWAPILIB/Position.cpp
+        external/bwapi/BWAPILIB/Race.cpp
+        external/bwapi/BWAPILIB/Region.cpp
+        external/bwapi/BWAPILIB/Regionset.cpp
+        external/bwapi/BWAPILIB/Streams.cpp
+        external/bwapi/BWAPILIB/TechType.cpp
+        external/bwapi/BWAPILIB/Unit.cpp
+        external/bwapi/BWAPILIB/UnitCommand.cpp
+        external/bwapi/BWAPILIB/UnitCommandType.cpp
+        external/bwapi/BWAPILIB/Unitset.cpp
+        external/bwapi/BWAPILIB/UnitSizeType.cpp
+        external/bwapi/BWAPILIB/UnitType.cpp
+        external/bwapi/BWAPILIB/UpgradeType.cpp
+        external/bwapi/BWAPILIB/WeaponType.cpp
+        external/bwapi/include/BWAPI/Client/BulletData.h
+        external/bwapi/include/BWAPI/Client/BulletImpl.h
+        external/bwapi/include/BWAPI/Client/Client.h
+        external/bwapi/include/BWAPI/Client/Command.h
+        external/bwapi/include/BWAPI/Client/CommandTemp.h
+        external/bwapi/include/BWAPI/Client/CommandType.h
+        external/bwapi/include/BWAPI/Client/Event.h
+        external/bwapi/include/BWAPI/Client/ForceData.h
+        external/bwapi/include/BWAPI/Client/ForceImpl.h
+        external/bwapi/include/BWAPI/Client/GameData.h
+        external/bwapi/include/BWAPI/Client/GameImpl.h
+        external/bwapi/include/BWAPI/Client/GameTable.h
+        external/bwapi/include/BWAPI/Client/PlayerData.h
+        external/bwapi/include/BWAPI/Client/PlayerImpl.h
+        external/bwapi/include/BWAPI/Client/RegionData.h
+        external/bwapi/include/BWAPI/Client/RegionImpl.h
+        external/bwapi/include/BWAPI/Client/Shape.h
+        external/bwapi/include/BWAPI/Client/ShapeType.h
+        external/bwapi/include/BWAPI/Client/UnitCommand.h
+        external/bwapi/include/BWAPI/Client/UnitData.h
+        external/bwapi/include/BWAPI/Client/UnitImpl.h
+        external/bwapi/include/BWAPI/AIModule.h
+        external/bwapi/include/BWAPI/ArithmaticFilter.h
+        external/bwapi/include/BWAPI/BestFilter.h
+        external/bwapi/include/BWAPI/BroodwarOutputDevice.h
+        external/bwapi/include/BWAPI/Bullet.h
+        external/bwapi/include/BWAPI/Bulletset.h
+        external/bwapi/include/BWAPI/BulletType.h
+        external/bwapi/include/BWAPI/Client.h
+        external/bwapi/include/BWAPI/Color.h
+        external/bwapi/include/BWAPI/ComparisonFilter.h
+        external/bwapi/include/BWAPI/Constants.h
+        external/bwapi/include/BWAPI/CoordinateType.h
+        external/bwapi/include/BWAPI/DamageType.h
+        external/bwapi/include/BWAPI/Error.h
+        external/bwapi/include/BWAPI/Event.h
+        external/bwapi/include/BWAPI/EventType.h
+        external/bwapi/include/BWAPI/ExplosionType.h
+        external/bwapi/include/BWAPI/Filters.h
+        external/bwapi/include/BWAPI/Flag.h
+        external/bwapi/include/BWAPI/Force.h
+        external/bwapi/include/BWAPI/Forceset.h
+        external/bwapi/include/BWAPI/Game.h
+        external/bwapi/include/BWAPI/GameType.h
+        external/bwapi/include/BWAPI/Input.h
+        external/bwapi/include/BWAPI/Interface.h
+        external/bwapi/include/BWAPI/InterfaceEvent.h
+        external/bwapi/include/BWAPI/Latency.h
+        external/bwapi/include/BWAPI/Order.h
+        external/bwapi/include/BWAPI/Player.h
+        external/bwapi/include/BWAPI/Playerset.h
+        external/bwapi/include/BWAPI/PlayerType.h
+        external/bwapi/include/BWAPI/Position.h
+        external/bwapi/include/BWAPI/Race.h
+        external/bwapi/include/BWAPI/Region.h
+        external/bwapi/include/BWAPI/Regionset.h
+        external/bwapi/include/BWAPI/SetContainer.h
+        external/bwapi/include/BWAPI/Streams.h
+        external/bwapi/include/BWAPI/TechType.h
+        external/bwapi/include/BWAPI/TournamentAction.h
+        external/bwapi/include/BWAPI/Type.h
+        external/bwapi/include/BWAPI/UnaryFilter.h
+        external/bwapi/include/BWAPI/Unit.h
+        external/bwapi/include/BWAPI/UnitCommand.h
+        external/bwapi/include/BWAPI/UnitCommandType.h
+        external/bwapi/include/BWAPI/Unitset.h
+        external/bwapi/include/BWAPI/UnitSizeType.h
+        external/bwapi/include/BWAPI/UnitType.h
+        external/bwapi/include/BWAPI/UpgradeType.h
+        external/bwapi/include/BWAPI/WeaponType.h
+        external/bwapi/include/BWAPI.h
+        external/bwapi/include/Debug.h
+        external/bwapi/include/starcraftver.h
+        external/bwapi/include/svnrev.h
+        external/bwapi/shared/BulletShared.cpp
+        external/bwapi/shared/ForceShared.cpp
+        external/bwapi/shared/GameShared.cpp
+        external/bwapi/shared/PlayerShared.cpp
+        external/bwapi/shared/RegionShared.cpp
+        external/bwapi/shared/Templates.h
+        external/bwapi/shared/UnitShared.cpp
+        src/Bot.cpp
+        src/Bot.h src/Dll.cpp src/main.cpp)
