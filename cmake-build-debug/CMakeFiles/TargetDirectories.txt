@@ -1,3 +1,0 @@
-C:/Users/AsyaBubka/Desktop/fdfdf/bw/cmake-build-debug/CMakeFiles/bw.dir
-C:/Users/AsyaBubka/Desktop/fdfdf/bw/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/AsyaBubka/Desktop/fdfdf/bw/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -39,4 +39,4 @@ bin/ReplayParser.exe
 bin/RunReplayParserAndStarcraft.bat
 bin/replaydata
 .idea
-.cmake-build-debug
+cmake-build-debug
