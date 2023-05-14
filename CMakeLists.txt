@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(STARTcraft)
+project(bw)
 
 set(CMAKE_CXX_STANDARD 23)
 
@@ -8,7 +8,12 @@ include_directories(external/bwapi/include)
 include_directories(external/bwapi/include/BWAPI)
 include_directories(external/bwapi/include/BWAPI/Client)
 include_directories(external/bwapi/shared)
-include_directories(src/starterbot)
+
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/bin/init.bat
+        ${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
+
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config/bwapi.ini
+        ${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
 
 add_executable(bw
         external/bwapi/BWAPIClient/BulletImpl.cpp
@@ -132,5 +137,5 @@ add_executable(bw
         external/bwapi/shared/RegionShared.cpp
         external/bwapi/shared/Templates.h
         external/bwapi/shared/UnitShared.cpp
-        src/Bot.cpp
-        src/Bot.h src/Dll.cpp src/main.cpp)
+        src/bot/Bot.cpp
+        src/bot/Bot.h src/dll/Dll.cpp src/main.cpp)

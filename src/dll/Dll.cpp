@@ -1,7 +1,7 @@
-#include <BWAPI.h>
-#include <Windows.h>
+#include "BWAPI.h"
+#include <windows.h>
 
-#include "Bot.h"
+#include "../bot/Bot.h"
 
 extern "C" __declspec(dllexport) void gameInit(BWAPI::Game* game) { BWAPI::BroodwarPtr = game; }
 BOOL APIENTRY DllMain( HANDLE hModule, DWORD ul_reason_for_call, LPVOID lpReserved )
